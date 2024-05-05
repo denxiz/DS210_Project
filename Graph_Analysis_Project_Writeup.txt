@@ -1,0 +1,33 @@
+
+Project Overview
+
+This Rust project implements a simple graph structure to analyze network properties using Breadth-First Search (BFS). It specifically focuses on various measurements related to shortest path distances such as the average shortest path length, standard deviation, maximum and minimum path lengths, median path length, and distribution of path lengths. The code uses an adjacency list representation for the graph, facilitated by Rust’s standard HashMap.
+
+Functionality
+
+The project includes:
+- A Graph struct to store graph data.
+- Methods to add edges and compute shortest paths using BFS.
+- Functions to calculate various statistical measures of the graph based on BFS results.
+
+How to Run the Project
+
+1. Setup your Rust environment if not already done. You can download Rust and Cargo from the official Rust site.
+2. Place the source code in a file named main.rs inside a Cargo project.
+3. Add the necessary dependencies in Cargo.toml, if any are required.
+4. Run the project using Cargo with the command cargo run.
+5. Ensure the file Amazon0302.txt is in the same directory as your project or update the file path in the source code accordingly.
+
+The program will print several statistical measures for a given source node in the graph, like average, standard deviation, max and min shortest path lengths, median, and the distribution of path lengths.
+
+Output
+
+The output consists of the calculated values for the selected source node's path properties, such as average path length, standard deviation, maximum and minimum path lengths, median, and a distribution histogram of path lengths. It is displayed in the console after the program execution.
+
+Tests
+
+The project includes unit tests to verify the functionality of graph operations such as adding edges and performing BFS. The tests help ensure that the graph accurately reflects its structure and the BFS correctly calculates shortest paths.
+
+Conclusion
+
+This Rust program provides a robust tool for analyzing graph properties through BFS, making it valuable for research and development in network analysis, graph theory, or any field requiring efficient path analysis.
