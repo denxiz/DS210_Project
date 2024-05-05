@@ -156,3 +156,33 @@ fn main() {
         println!("Distance {}: {}", distance, count);
     }
 }
+#[cfg(test)]
+    mod tests {
+        use super::*;
+    
+        #[test]
+        fn test_add_edge() {
+            let mut graph = Graph::new();
+            graph.add_edge(1, 2);
+            assert_eq!(graph.edges.get(&1).unwrap(), &vec![2]);
+        }
+    
+        #[test]
+        fn test_bfs() {
+            let mut graph = Graph::new();
+            graph.add_edge(0, 1);
+            graph.add_edge(1, 2);
+            graph.add_edge(0, 2);
+            let distances = graph.bfs(0);
+            assert_eq!(distances[&2], 1); // Direct path should be taken
+        }
+    
+        #[test]
+        fn test_no_path() {
+            let mut graph = Graph::new();
+            graph.add_edge(0, 1);
+            graph.add_edge(2, 3); // Disconnected part of the graph
+            let distances = graph.bfs(0);
+            assert!(!distances.contains_key(&3)); // There should be no path to node 3 from node 0
+        }
+    }
